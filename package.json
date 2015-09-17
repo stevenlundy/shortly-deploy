@@ -32,5 +32,9 @@
   },
   "devDependencies": {
     "supertest": "^0.10.0"
+  },
+  "engine": {
+    "node": "0.12.0",
+    "npm": "2.5.1"
   }
 }
