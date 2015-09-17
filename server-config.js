@@ -8,11 +8,11 @@ var app = express();
 process.env.PWD = process.cwd();
 
 app.configure(function() {
+  app.use(express.static(process.env.PWD + '/public'));
   app.set('views', process.env.PWD + '/views');
   app.set('view engine', 'ejs');
   app.use(partials());
   app.use(express.bodyParser());
-  app.use(express.static(process.env.PWD + '/public'));
   app.use(express.cookieParser('shhhh, very secret'));
   app.use(express.session());
 });
