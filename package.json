@@ -36,5 +36,8 @@
   "engine": {
     "node": "0.12.0",
     "npm": "2.5.1"
+  },
+  "script": {
+    "start": "node server.js"
   }
 }
