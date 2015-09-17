@@ -3,10 +3,12 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     concat: {
-      src: ['public/lib/jquery.js', 'public/lib/underscore.js', 'public/lib/backbone.js', 'public/lib/underscore.js',
-        'public/client/app.js', 'public/client/link.js', 'public/client/linkView.js', 'public/client/links.js', 'public/client/linksView.js', 'public/client/createLinksView.js', 'public/client/router.js'
-      ],
-      dest: 'public/dist/production.js'
+      build: {
+        src: ['public/lib/jquery.js', 'public/lib/underscore.js', 'public/lib/backbone.js', 'public/lib/underscore.js',
+          'public/client/app.js', 'public/client/link.js', 'public/client/linkView.js', 'public/client/links.js', 'public/client/linksView.js', 'public/client/createLinksView.js', 'public/client/router.js'
+        ],
+        dest: 'public/dist/production.js'
+      }
     },
 
     mochaTest: {
@@ -25,8 +27,11 @@ module.exports = function(grunt) {
     },
 
     uglify: {
-      src: 'public/dist/production.js',
-      dest: 'public/dist/production.min.js'
+      build: {
+        src: 'public/dist/production.js',
+        dest: 'public/dist/production.min.js'
+      }
+
     },
 
     jshint: {
@@ -44,8 +49,10 @@ module.exports = function(grunt) {
     },
 
     cssmin: {
-      src: 'public/*.css',
-      dest: 'public/dist/styles.min.css'
+      build: {
+        src: 'public/*.css',
+        dest: 'public/dist/styles.min.css'
+      }
     },
 
     watch: {
