@@ -5,13 +5,14 @@ var util = require('./lib/utility');
 var handler = require('./lib/request-handler');
 
 var app = express();
+process.env.PWD = process.cwd();
 
 app.configure(function() {
-  app.set('views', __dirname + '/views');
+  app.set('views', process.env.PWD + '/views');
   app.set('view engine', 'ejs');
   app.use(partials());
   app.use(express.bodyParser());
-  app.use(express.static(__dirname + '/public'));
+  app.use(express.static(process.env.PWD + '/public'));
   app.use(express.cookieParser('shhhh, very secret'));
   app.use(express.session());
 });
